@@ -1,0 +1,27 @@
+// color utility start
+.bg-blue {
+    background-color: $color-blue;
+}
+// color utility end
+
+
+// padding utility start
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+// padding utility end
+
+
+// width utility start
+.w-md-50{
+    @media(min-width: 768px){
+        width: 50%;
+    }
+}
+.max-w-md-50{
+    @media(min-width: 768px){
+        max-width: 50%;
+    }
+}
+// width utility end

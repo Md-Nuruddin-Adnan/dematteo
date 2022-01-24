@@ -1,0 +1,20 @@
+.btn-blue {
+    background-color: $color-blue;
+    border-radius: 12px;
+    color: $color-white;
+
+    &:hover {
+        background-color: lighten($color-blue, 10);
+        color: $color-white;
+    }
+}
+.btn-green {
+    background-color: $color-green;
+    border-radius: 12px;
+    color: $color-white;
+
+    &:hover {
+        background-color: darken($color-green, 10);
+        color: $color-white;
+    }
+}
