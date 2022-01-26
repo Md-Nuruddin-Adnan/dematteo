@@ -109,7 +109,7 @@ body {
   margin: 20px 0;
 }
 
-.checkout .billing-details .billing-heading span {
+.checkout .billing-details .billing-heading .billing-heading-number {
   font-size: 19px;
   width: 35px;
   height: 35px;
@@ -121,6 +121,28 @@ body {
   place-items: center;
   margin-right: 10px;
   line-height: 0;
+}
+
+.checkout .billing-details .billing-heading .billing-heading-summary {
+  font-size: 12px;
+  color: #acb5ca;
+  font-weight: 400;
+}
+
+.checkout .billing-details .billing-heading .billing-edit {
+  font-size: 14px;
+  color: #293d73;
+  font-weight: 400;
+}
+
+.checkout .billing-details .billing-heading.muted-text {
+  color: #acb5ca;
+}
+
+.checkout .billing-details .billing-heading.muted-text .billing-heading-number {
+  color: #fff;
+  background-color: #acb5ca;
+  border-color: #acb5ca;
 }
 
 @media (min-width: 768px) {
@@ -219,6 +241,17 @@ body {
   text-align: right;
 }
 
+.checkout .billing-details .billing-description .shipping-method .shipping-method-item #shiping-method-postponed-content ::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.checkout .billing-details .billing-description .shipping-method .shipping-method-item #shiping-method-postponed-content .form-control {
+  background-color: #263d74;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 .checkout .billing-details .billing-description .additional-options .additional-options-item {
   border: 1px solid #263d74;
   color: #293d73;
@@ -259,11 +292,7 @@ body {
   margin-bottom: 20px;
 }
 
-.checkout .billing-details .billing-description .payment-method .payment-method-item {
-  margin-bottom: 20px;
-}
-
-.checkout .billing-details .billing-description .payment-method .payment-method-item input {
+.checkout .billing-details .billing-description .payment-method .payment-method-item input[type="radio"] {
   margin-right: 15px;
 }
 
@@ -280,13 +309,11 @@ body {
   font-weight: 700;
   font-size: 16px;
   color: #293d73;
-  margin-left: 15px;
 }
 
 .checkout .billing-details .billing-description .payment-method .payment-method-item p {
   font-size: 13px;
   color: #293d73;
-  margin-left: 15px;
 }
 
 .checkout .billing-details .billing-description .payment-method .payment-method-item h4 {
@@ -299,6 +326,47 @@ body {
           flex-grow: 1;
   text-align: right;
   white-space: nowrap;
+}
+
+.checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner {
+  padding: 10px 0;
+}
+
+.checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner input[type="radio"] {
+  margin-right: 10px;
+}
+
+.checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner .card-info .form-control {
+  background-color: transparent;
+  border: 1px solid #263d74;
+  color: #293d73;
+}
+
+.checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner .payment-card-image-box {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-columns: 2fr 2fr 3fr 4fr;
+      grid-template-columns: 2fr 2fr 3fr 4fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 575px) {
+  .checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner .payment-card-image-box {
+    grid-gap: 15px;
+  }
+}
+
+.checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner .pay-at-rate-img {
+  max-width: 130px;
+}
+
+@media (max-width: 575px) {
+  .checkout .billing-details .billing-description .payment-method .payment-method-item.payment-method-item-inner .pay-at-rate-img {
+    max-width: 100px;
+  }
 }
 
 .checkout .order-summary .order-summary-heading {

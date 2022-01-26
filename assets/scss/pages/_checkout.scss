@@ -19,7 +19,7 @@
             align-items: center;
             margin: 20px 0;
 
-            span {
+            .billing-heading-number {
                 font-size: 19px;
                 width: 35px;
                 height: 35px;
@@ -30,6 +30,24 @@
                 place-items: center;
                 margin-right: 10px;
                 line-height: 0;
+            }
+
+            .billing-heading-summary {
+                @include font-style(12px, #acb5ca, 400);
+            }
+
+            .billing-edit {
+                @include font-style(14px, $text-blue, 400);
+            }
+
+            &.muted-text {
+                color: #acb5ca;
+
+                .billing-heading-number {
+                    color: $color-white;
+                    background-color: #acb5ca;
+                    border-color: #acb5ca;
+                }
             }
         }
 
@@ -100,6 +118,17 @@
                         flex-grow: 1;
                         text-align: right;
                     }
+
+                    #shiping-method-postponed-content{
+                        ::-webkit-calendar-picker-indicator {
+                            filter: invert(1);
+                        }
+                        .form-control {
+                            background-color: $color-blue;
+                            color: $color-white;
+                            border: 1px solid $color-white;
+                        }
+                    }
                 }
             }
 
@@ -136,8 +165,7 @@
                 padding: 20px;
                 margin-bottom: 20px;
                 .payment-method-item {
-                    margin-bottom: 20px;
-                    input {
+                    input[type="radio"] {
                         margin-right: 15px;
                     }
 
@@ -154,12 +182,10 @@
                         font-weight: 700;
                         font-size: 16px;
                         color: $text-blue;
-                        margin-left: 15px;
                     }
                     p {
                         font-size: 13px;
                         color: $text-blue;
-                        margin-left: 15px;
                     }
                     h4 {
                         color: $text-blue;
@@ -170,6 +196,41 @@
                         text-align: right;
                         white-space: nowrap;
                     }
+
+                    &.payment-method-item-inner {
+                        padding: 10px 0;
+                        input[type="radio"] {
+                            margin-right: 10px;
+                        }
+
+                        .card-info {
+                            .form-control {
+                                background-color: transparent;
+                                border: 1px solid $color-blue;
+                                color: $text-blue;
+                            }
+                        }
+
+                        .payment-card-image-box {
+                            display: grid;
+                            grid-gap: 30px;
+                            grid-template-columns: 2fr 2fr 3fr 4fr;
+                            align-items: center;
+
+                            @media(max-width: 575px){
+                                grid-gap: 15px;
+                            }
+                        }
+
+                        .pay-at-rate-img {
+                            max-width: 130px;
+
+                            @media(max-width: 575px){
+                                max-width: 100px;
+                            }
+                        }
+                    }
+
                 }
             }
         }
